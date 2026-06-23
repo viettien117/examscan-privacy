@@ -52,7 +52,7 @@
     <p class="meta"><b>App / Ứng dụng:</b> ExamScan (iOS <code>vn.ExamScan</code> · Android <code>vn.examscan</code>)</p>
     <p class="meta"><b>Developer / Nhà phát triển:</b> Nguyễn Việt Tiến (viettien117)</p>
     <p class="meta"><b>Contact / Liên hệ:</b> <a href="mailto:Rubi.ExamScan@gmail.com">Rubi.ExamScan@gmail.com</a></p>
-    <p class="meta"><b>Effective date / Hiệu lực từ:</b> 2026-06-10</p>
+    <p class="meta"><b>Effective date / Hiệu lực từ:</b> 2026-06-23</p>
     <nav class="lang-nav">
       <a href="#en">English</a>
       <a href="#vi">Tiếng Việt</a>
@@ -81,6 +81,10 @@
     <p>ExamScan has <b>no user accounts</b> and <b>no login</b>. The app does not
     send any answer sheet image or grading result to our servers — all
     recognition and grading happens <b>on your device</b>.</p>
+    <p>The app <b>does</b> send anonymous usage statistics, crash/performance
+    diagnostics, and a push-notification token to Google Firebase to operate and
+    improve the app and to deliver notifications — see Section 3(c). This never
+    includes your answer sheet images, grading results, or personal identifiers.</p>
 
     <h3>2. Data the app processes locally only</h3>
     <table>
@@ -93,7 +97,7 @@
     </table>
 
     <h3>3. Data shared with third parties</h3>
-    <p>ExamScan uses <b>two</b> third-party services. Each has its own privacy policy:</p>
+    <p>ExamScan uses <b>three</b> third-party services. Each has its own privacy policy:</p>
 
     <h4>a) Google AdMob (advertising)</h4>
     <p>The app shows banner and rewarded video advertisements through the Google
@@ -123,12 +127,29 @@
     these files. GitHub's policy:
     <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</p>
 
+    <h4>c) Google Firebase (analytics, crash reporting, remote config, push notifications)</h4>
+    <p>The app uses Google Firebase SDKs to understand usage, improve stability,
+    deliver remote settings, and send notifications. Firebase may collect:</p>
+    <ul>
+      <li><b>Analytics</b> — anonymous app-usage events (screens viewed, features used) and aggregate device info (model, OS version, language, country)</li>
+      <li><b>Crashlytics</b> — crash and performance diagnostics (stack traces, device state) used to fix bugs</li>
+      <li><b>Remote Config</b> — fetches configuration values (e.g., reward amounts) from Google's servers</li>
+      <li><b>Cloud Messaging</b> — a device push token used to deliver notifications about news, updates, and offers</li>
+      <li>A pseudonymous device / installation identifier to support the above</li>
+    </ul>
+    <p>This data is used only to operate and improve ExamScan and is <b>not</b> used
+    to track you across other companies' apps or websites. You can turn
+    notifications off anytime in your device Settings. Google / Firebase policies:
+    <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>
+    and <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</p>
+
     <h3>4. Permissions the app requests</h3>
     <table>
       <tr><th>Permission</th><th>Why</th></tr>
       <tr><td>Camera</td><td>Capture answer sheet photos in-app</td></tr>
       <tr><td>Photo library</td><td>Pick answer sheet photos to grade</td></tr>
-      <tr><td>Internet (network)</td><td>Load AdMob ads and download promotional banner images from GitHub</td></tr>
+      <tr><td>Internet (network)</td><td>Load AdMob ads, download promotional banner images from GitHub, and connect to Google Firebase</td></tr>
+      <tr><td>Notifications (optional)</td><td>Send you news, updates, and offers via push — you choose whether to allow; can be turned off anytime in Settings</td></tr>
     </table>
     <p>The app does <b>not</b> request location, contacts, microphone, SMS, or any
     other sensitive permission.</p>
@@ -193,6 +214,10 @@
     <p>ExamScan <b>không có tài khoản người dùng</b> và <b>không có đăng nhập</b>.
     Mọi thao tác nhận diện ô tròn và chấm điểm đều diễn ra <b>ngay trên máy
     bạn</b>, không gửi ảnh bài làm về bất kỳ máy chủ nào.</p>
+    <p>App <b>có</b> gửi số liệu thống kê sử dụng ẩn danh, dữ liệu chẩn đoán sự
+    cố/hiệu năng, và một mã thông báo đẩy (push token) tới Google Firebase để vận
+    hành, cải thiện app và gửi thông báo — xem Mục 3(c). Phần này <b>không bao giờ</b>
+    bao gồm ảnh bài làm, kết quả chấm, hay thông tin định danh cá nhân của bạn.</p>
 
     <h3>2. Dữ liệu app xử lý cục bộ</h3>
     <table>
@@ -205,7 +230,7 @@
     </table>
 
     <h3>3. Dữ liệu chia sẻ với bên thứ ba</h3>
-    <p>ExamScan dùng <b>hai</b> dịch vụ bên thứ ba. Mỗi bên có chính sách riêng:</p>
+    <p>ExamScan dùng <b>ba</b> dịch vụ bên thứ ba. Mỗi bên có chính sách riêng:</p>
 
     <h4>a) Google AdMob (quảng cáo)</h4>
     <p>App hiển thị quảng cáo banner và quảng cáo có thưởng (rewarded video) qua
@@ -234,12 +259,29 @@
     này. Chính sách GitHub:
     <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</p>
 
+    <h4>c) Google Firebase (phân tích, báo lỗi, cấu hình từ xa, thông báo đẩy)</h4>
+    <p>App dùng các SDK Google Firebase để hiểu cách sử dụng, cải thiện độ ổn định,
+    nhận cấu hình từ xa và gửi thông báo. Firebase có thể thu thập:</p>
+    <ul>
+      <li><b>Analytics</b> — sự kiện sử dụng app ẩn danh (màn hình đã xem, tính năng dùng) và thông tin thiết bị tổng hợp (kiểu máy, phiên bản HĐH, ngôn ngữ, quốc gia)</li>
+      <li><b>Crashlytics</b> — dữ liệu chẩn đoán sự cố và hiệu năng (stack trace, trạng thái thiết bị) để sửa lỗi</li>
+      <li><b>Remote Config</b> — tải các giá trị cấu hình (vd số lượt thưởng) từ máy chủ Google</li>
+      <li><b>Cloud Messaging</b> — một mã push token của thiết bị để gửi thông báo về tin tức, cập nhật và ưu đãi</li>
+      <li>Một mã định danh thiết bị / bản cài đặt ẩn danh để phục vụ các mục đích trên</li>
+    </ul>
+    <p>Dữ liệu này chỉ dùng để vận hành và cải thiện ExamScan, <b>không</b> dùng để
+    theo dõi bạn xuyên app/website của công ty khác. Bạn có thể tắt thông báo bất
+    cứ lúc nào trong Cài đặt máy. Chính sách Google / Firebase:
+    <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>
+    và <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</p>
+
     <h3>4. Quyền app yêu cầu</h3>
     <table>
       <tr><th>Quyền</th><th>Mục đích</th></tr>
       <tr><td>Camera</td><td>Chụp ảnh bài làm trong app</td></tr>
       <tr><td>Thư viện ảnh</td><td>Chọn ảnh bài làm để chấm</td></tr>
-      <tr><td>Internet (mạng)</td><td>Tải quảng cáo AdMob và ảnh banner từ GitHub</td></tr>
+      <tr><td>Internet (mạng)</td><td>Tải quảng cáo AdMob, ảnh banner từ GitHub, và kết nối Google Firebase</td></tr>
+      <tr><td>Thông báo (tuỳ chọn)</td><td>Gửi tin tức, cập nhật, ưu đãi qua thông báo đẩy — bạn tự chọn cho phép; có thể tắt bất cứ lúc nào trong Cài đặt</td></tr>
     </table>
     <p>App <b>không</b> yêu cầu quyền vị trí, danh bạ, micro, SMS, hay bất kỳ quyền
     nhạy cảm nào khác.</p>
