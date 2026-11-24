@@ -52,7 +52,7 @@
     <p class="meta"><b>App / Ứng dụng:</b> ExamScan (iOS <code>vn.ExamScan</code> · Android <code>vn.examscan</code>)</p>
     <p class="meta"><b>Developer / Nhà phát triển:</b> Nguyễn Việt Tiến (viettien117)</p>
     <p class="meta"><b>Contact / Liên hệ:</b> <a href="mailto:Rubi.ExamScan@gmail.com">Rubi.ExamScan@gmail.com</a></p>
-    <p class="meta"><b>Effective date / Hiệu lực từ:</b> 2026-06-23</p>
+    <p class="meta"><b>Effective date / Hiệu lực từ:</b> 2026-11-25</p>
     <nav class="lang-nav">
       <a href="#en">English</a>
       <a href="#vi">Tiếng Việt</a>
@@ -78,6 +78,9 @@
       <li>SMS, call logs</li>
       <li>Health, fitness, or financial data</li>
     </ul>
+    <p><b>Payment details.</b> ExamScan Pro subscriptions are bought and billed
+    entirely by Google Play (Android) or the App Store (iOS). We never see or
+    receive your card number, billing address, or store account details.</p>
     <p>ExamScan has <b>no user accounts</b> and <b>no login</b>. The app does not
     send any answer sheet image or grading result to our servers — all
     recognition and grading happens <b>on your device</b>.</p>
@@ -94,34 +97,52 @@
       <tr><td>Grading results (<code>.xlsx</code> export)</td><td>Saved when you tap "Export"</td><td>Saved/shared only to the destination <b>you</b> choose (Files app, share sheet, Android file picker)</td></tr>
       <tr><td>App settings (language VI/EN, remaining grading credits)</td><td>App preferences</td><td>Stored only in the app's private storage on your device (UserDefaults on iOS / SharedPreferences on Android)</td></tr>
       <tr><td>Reward counters (last daily-login date, last share date, today's rewarded-ad &amp; banner-tap counts)</td><td>To enforce once-per-day bonuses and the progressive video reward</td><td>Stored only in the app's private storage on your device</td></tr>
+      <tr><td>ExamScan Pro status (active or not, plan type, end date of the prepaid plan)</td><td>To unlock unlimited grading and remove ads</td><td>Stored only in the app's private storage on your device; re-checked with Google Play / the App Store each time the app opens</td></tr>
     </table>
 
     <h3>3. Data shared with third parties</h3>
-    <p>ExamScan uses <b>three</b> third-party services. Each has its own privacy policy:</p>
+    <p>ExamScan uses <b>four</b> third-party services. Each has its own privacy policy:</p>
 
-    <h4>a) Google AdMob (advertising)</h4>
-    <p>The app shows banner and rewarded video advertisements through the Google
-    Mobile Ads SDK. AdMob may collect:</p>
+    <h4>a) Unity LevelPlay / ironSource (advertising)</h4>
+    <p>On <b>Android</b>, the app shows <b>rewarded video advertisements only</b>,
+    through the Unity LevelPlay (ironSource) mediation SDK, and only when you tap
+    the "watch a video for extra credits" button yourself. No ads appear on their
+    own while you work. On <b>iOS</b>, no third-party ad network is currently used
+    at all. The promotional banner at the bottom of the screen is <b>not</b> part
+    of this network on either platform — see section (b).</p>
+    <p>Unity LevelPlay and the ad networks it mediates may collect:</p>
     <ul>
-      <li>Advertising identifier (IDFA on iOS / AAID on Android) for ad measurement and frequency capping</li>
+      <li>Advertising identifier (AAID on Android) for ad measurement and frequency capping</li>
       <li>Approximate geographic region (country / city) inferred from IP</li>
       <li>Device model, OS version, screen size, language</li>
       <li>App bundle id and version</li>
-      <li>Ad interaction events (impressions, clicks)</li>
+      <li>Ad interaction events (impressions, video completions, clicks)</li>
     </ul>
     <p>The app does <b>not</b> present an App Tracking Transparency prompt and does
-    not track you across other companies' apps and websites; ads are served in a
-    non-tracking (limited/non-personalized) manner. Google's full policy:
-    <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.
+    not track you across other companies' apps and websites. Unity's full policy:
+    <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity Game Player and App User Privacy Policy</a>.
     On iOS you can manage ad settings in <b>Settings → Privacy &amp; Security →
     Apple Advertising / Tracking</b>; on Android in <b>Settings → Privacy → Ads</b>.</p>
-    <p>Ad content is filtered to <b>G-rated</b> (general audiences) only, with
-    politics, religion, sexual content, gambling, and 18+ categories blocked at
-    the AdMob account level.</p>
+    <p><b>Your choice (EEA / UK).</b> If you are in the European Economic Area or
+    the United Kingdom, the app asks you — before the first video — whether ads may
+    be personalized to your interests. If you decline, you still get ads and you
+    still earn exactly the same number of credits; they are simply not selected
+    based on you. You can change your answer at any time in
+    <b>About → Personalized ads</b>. Outside those regions this question is not
+    shown, and ads are not personalized on iOS at all.</p>
+    <p>We configure our advertising partners to exclude adult and
+    age-inappropriate categories at the strictest setting each partner offers,
+    and we review the ads that appear in the app periodically. Ad networks
+    source their inventory from many advertisers, so we cannot guarantee that
+    every single ad will be suitable. If you see an ad you consider
+    inappropriate, please report it to
+    <a href="mailto:Rubi.ExamScan@gmail.com">Rubi.ExamScan@gmail.com</a> and we
+    will block it.</p>
 
     <h4>b) GitHub (<code>raw.githubusercontent.com</code>)</h4>
-    <p>The app downloads its in-app promotional banner images (separate from
-    AdMob) from a public GitHub repository:
+    <p>The app downloads its in-app promotional banner images (these are
+    self-hosted and reviewed by us, entirely separate from the ad network) from a
+    public GitHub repository:
     <a href="https://github.com/viettien117/ExamScan_Ads">https://github.com/viettien117/ExamScan_Ads</a>.
     GitHub will see your IP address and standard HTTP headers when the app fetches
     these files. GitHub's policy:
@@ -131,7 +152,7 @@
     <p>The app uses Google Firebase SDKs to understand usage, improve stability,
     deliver remote settings, and send notifications. Firebase may collect:</p>
     <ul>
-      <li><b>Analytics</b> — anonymous app-usage events (screens viewed, features used) and aggregate device info (model, OS version, language, country)</li>
+      <li><b>Analytics</b> — anonymous app-usage events (screens viewed, features used, including opening the ExamScan Pro screen, the plan chosen and whether a purchase completed) and aggregate device info (model, OS version, language, country)</li>
       <li><b>Crashlytics</b> — crash and performance diagnostics (stack traces, device state) used to fix bugs</li>
       <li><b>Remote Config</b> — fetches configuration values (e.g., reward amounts) from Google's servers</li>
       <li><b>Cloud Messaging</b> — a device push token used to deliver notifications about news, updates, and offers</li>
@@ -143,26 +164,49 @@
     <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>
     and <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</p>
 
+    <h4>d) Google Play Billing / Apple App Store (ExamScan Pro, optional)</h4>
+    <p>ExamScan Pro (unlimited grading, no ads) is an optional subscription sold
+    through Google Play Billing on Android and the App Store on iOS. The store
+    processes the payment, handles renewal and cancellation, and tells the app
+    whether you have an active plan. The app keeps only that status on your device
+    and sends no payment information anywhere. You can manage or cancel your
+    subscription at any time in your Google Play or Apple account settings.
+    Policies: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
+    and <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a>.</p>
+
     <h3>4. Permissions the app requests</h3>
     <table>
       <tr><th>Permission</th><th>Why</th></tr>
       <tr><td>Camera</td><td>Capture answer sheet photos in-app</td></tr>
       <tr><td>Photo library</td><td>Pick answer sheet photos to grade</td></tr>
-      <tr><td>Internet (network)</td><td>Load AdMob ads, download promotional banner images from GitHub, and connect to Google Firebase</td></tr>
+      <tr><td>Internet (network)</td><td>Load rewarded video ads, download promotional banner images from GitHub, and connect to Google Firebase</td></tr>
       <tr><td>Notifications (optional)</td><td>Send you news, updates, and offers via push — you choose whether to allow; can be turned off anytime in Settings</td></tr>
     </table>
+    <p>On Android the ad SDK also declares three background permissions of its own
+    (<code>ACCESS_ADSERVICES_TOPICS</code>, <code>FOREGROUND_SERVICE</code>,
+    <code>RECEIVE_BOOT_COMPLETED</code>). They come from the SDK and its scheduling
+    library, not from ExamScan's own code; the app itself never starts anything at
+    boot and runs no background service.</p>
     <p>The app does <b>not</b> request location, contacts, microphone, SMS, or any
     other sensitive permission.</p>
 
     <h3>5. Children</h3>
-    <p>ExamScan is designed for teachers and students. It does not knowingly
-    collect personal data from children. Ad content is restricted to G-rated to
-    keep the experience appropriate for minors.</p>
+    <p>ExamScan is a tool for teachers and exam markers. Students are the people
+    whose answer sheets get graded, not the intended users of the app. It does
+    not knowingly collect personal data from children.</p>
+    <p>We configure every advertising partner to exclude adult and
+    age-inappropriate categories at the strictest setting that partner offers,
+    and we review the ads shown in the app periodically. We cannot guarantee
+    that every ad served by a third-party network will be suitable; report
+    anything inappropriate to
+    <a href="mailto:Rubi.ExamScan@gmail.com">Rubi.ExamScan@gmail.com</a> and we
+    will block it.</p>
 
     <h3>6. Data retention</h3>
     <ul>
       <li>Images and grading results: kept on <b>your device</b> until you delete them (uninstalling the app removes the cache).</li>
       <li>Credit counter and language preference: kept on your device; cleared when you uninstall the app or clear its data.</li>
+      <li>ExamScan Pro status: kept on your device; after reinstalling, the app restores it from your Google Play / App Store account.</li>
     </ul>
 
     <h3>7. Your rights</h3>
@@ -211,6 +255,9 @@
       <li>SMS, nhật ký cuộc gọi</li>
       <li>Dữ liệu sức khỏe, tài chính</li>
     </ul>
+    <p><b>Thông tin thanh toán.</b> Gói ExamScan Pro được mua và thanh toán hoàn toàn
+    qua Google Play (Android) hoặc App Store (iOS). Chúng tôi không bao giờ thấy hay
+    nhận số thẻ, địa chỉ thanh toán hay thông tin tài khoản cửa hàng của bạn.</p>
     <p>ExamScan <b>không có tài khoản người dùng</b> và <b>không có đăng nhập</b>.
     Mọi thao tác nhận diện ô tròn và chấm điểm đều diễn ra <b>ngay trên máy
     bạn</b>, không gửi ảnh bài làm về bất kỳ máy chủ nào.</p>
@@ -227,33 +274,51 @@
       <tr><td>Kết quả <code>.xlsx</code></td><td>Khi bạn bấm "Xuất file"</td><td>Lưu/chia sẻ tới nơi <b>bạn tự chọn</b> (app Files, share sheet, hộp thoại Android)</td></tr>
       <tr><td>Cài đặt app (ngôn ngữ VI/EN, số lượt chấm còn)</td><td>Tuỳ chọn của bạn</td><td>Chỉ trong bộ nhớ riêng của app trên máy (UserDefaults trên iOS / SharedPreferences trên Android)</td></tr>
       <tr><td>Bộ đếm lượt thưởng (ngày nhận daily/share gần nhất, số video &amp; lần chạm banner trong ngày)</td><td>Giới hạn quà mỗi ngày 1 lần và thưởng video tăng dần</td><td>Chỉ trong bộ nhớ riêng của app trên máy</td></tr>
+      <tr><td>Trạng thái ExamScan Pro (đang dùng hay không, loại gói, ngày hết hạn gói trả trước)</td><td>Mở chấm không giới hạn và tắt quảng cáo</td><td>Chỉ trong bộ nhớ riêng của app trên máy; được đối chiếu lại với Google Play / App Store mỗi lần mở app</td></tr>
     </table>
 
     <h3>3. Dữ liệu chia sẻ với bên thứ ba</h3>
-    <p>ExamScan dùng <b>ba</b> dịch vụ bên thứ ba. Mỗi bên có chính sách riêng:</p>
+    <p>ExamScan dùng <b>bốn</b> dịch vụ bên thứ ba. Mỗi bên có chính sách riêng:</p>
 
-    <h4>a) Google AdMob (quảng cáo)</h4>
-    <p>App hiển thị quảng cáo banner và quảng cáo có thưởng (rewarded video) qua
-    SDK Google Mobile Ads. AdMob có thể thu thập:</p>
+    <h4>a) Unity LevelPlay / ironSource (quảng cáo)</h4>
+    <p>Trên <b>Android</b>, app <b>chỉ hiển thị quảng cáo video có thưởng</b>, qua
+    SDK trung gian Unity LevelPlay (ironSource), và chỉ khi chính bạn bấm nút "xem
+    video nhận thêm lượt". Không có quảng cáo nào tự hiện lên trong lúc bạn đang
+    làm việc. Trên <b>iOS</b>, hiện app không dùng mạng quảng cáo bên thứ ba nào
+    cả. Banner ở cuối màn hình <b>không</b> thuộc mạng này trên cả hai nền tảng —
+    xem mục (b).</p>
+    <p>Unity LevelPlay và các mạng quảng cáo mà nó trung gian có thể thu thập:</p>
     <ul>
-      <li>Mã định danh quảng cáo (IDFA trên iOS / AAID trên Android) — để đo lường và giới hạn tần suất</li>
+      <li>Mã định danh quảng cáo (AAID trên Android) — để đo lường và giới hạn tần suất</li>
       <li>Khu vực địa lý tương đối (quốc gia / thành phố) suy từ IP</li>
       <li>Kiểu máy, phiên bản hệ điều hành, kích thước màn hình, ngôn ngữ</li>
       <li>Tên gói + phiên bản app</li>
-      <li>Sự kiện tương tác quảng cáo (hiển thị, click)</li>
+      <li>Sự kiện tương tác quảng cáo (hiển thị, xem hết video, click)</li>
     </ul>
     <p>App <b>không</b> hiển thị hộp thoại App Tracking Transparency và <b>không</b>
-    theo dõi bạn xuyên app/website của công ty khác; quảng cáo phục vụ ở chế độ
-    không theo dõi (giới hạn / không cá nhân hoá). Chính sách Google:
-    <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.
+    theo dõi bạn xuyên app/website của công ty khác. Chính sách Unity:
+    <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity Game Player and App User Privacy Policy</a>.
     Trên iOS bạn chỉnh trong <b>Cài đặt → Quyền riêng tư &amp; Bảo mật → Quảng cáo
     của Apple / Theo dõi</b>; trên Android trong <b>Cài đặt → Quyền riêng tư →
     Quảng cáo</b>.</p>
-    <p>Nội dung quảng cáo được lọc ở mức <b>G (Đối tượng chung)</b> — đã chặn các
-    mục chính trị, tôn giáo, tình dục, cờ bạc, 18+ ở cấp tài khoản AdMob.</p>
+    <p><b>Quyền lựa chọn của bạn (EEA / Anh).</b> Nếu bạn ở Khu vực Kinh tế châu Âu
+    hoặc Vương quốc Anh, app sẽ hỏi bạn — trước video đầu tiên — rằng quảng cáo có
+    được cá nhân hoá theo mối quan tâm của bạn hay không. Từ chối thì bạn vẫn có
+    quảng cáo và vẫn nhận đủ số lượt y như vậy; chỉ là quảng cáo không được chọn
+    riêng theo bạn. Bạn đổi câu trả lời lúc nào cũng được trong <b>Giới thiệu →
+    Quảng cáo cá nhân hoá</b>. Ngoài các khu vực đó câu hỏi này không hiện, và trên
+    iOS quảng cáo hoàn toàn không được cá nhân hoá.</p>
+    <p>Chúng tôi cấu hình các đối tác quảng cáo để loại bỏ những danh mục dành
+    cho người lớn và không phù hợp lứa tuổi, ở mức chặt nhất mà từng đối tác hỗ
+    trợ, và định kỳ kiểm tra quảng cáo hiển thị trong app. Mạng quảng cáo lấy
+    nguồn từ rất nhiều nhà quảng cáo nên chúng tôi không thể bảo đảm mọi quảng
+    cáo đều phù hợp. Nếu bạn thấy quảng cáo không phù hợp, hãy báo về
+    <a href="mailto:Rubi.ExamScan@gmail.com">Rubi.ExamScan@gmail.com</a>, chúng
+    tôi sẽ chặn.</p>
 
     <h4>b) GitHub (<code>raw.githubusercontent.com</code>)</h4>
-    <p>App tải ảnh banner quảng cáo nội bộ (riêng với AdMob) từ kho công khai trên
+    <p>App tải ảnh banner quảng cáo nội bộ (do chính chúng tôi tự đăng và tự duyệt,
+    hoàn toàn tách biệt với mạng quảng cáo) từ kho công khai trên
     GitHub: <a href="https://github.com/viettien117/ExamScan_Ads">https://github.com/viettien117/ExamScan_Ads</a>.
     GitHub sẽ thấy địa chỉ IP và HTTP header tiêu chuẩn của bạn khi tải các file
     này. Chính sách GitHub:
@@ -263,7 +328,7 @@
     <p>App dùng các SDK Google Firebase để hiểu cách sử dụng, cải thiện độ ổn định,
     nhận cấu hình từ xa và gửi thông báo. Firebase có thể thu thập:</p>
     <ul>
-      <li><b>Analytics</b> — sự kiện sử dụng app ẩn danh (màn hình đã xem, tính năng dùng) và thông tin thiết bị tổng hợp (kiểu máy, phiên bản HĐH, ngôn ngữ, quốc gia)</li>
+      <li><b>Analytics</b> — sự kiện sử dụng app ẩn danh (màn hình đã xem, tính năng dùng, kể cả việc mở màn hình ExamScan Pro, gói được chọn và mua có thành công không) và thông tin thiết bị tổng hợp (kiểu máy, phiên bản HĐH, ngôn ngữ, quốc gia)</li>
       <li><b>Crashlytics</b> — dữ liệu chẩn đoán sự cố và hiệu năng (stack trace, trạng thái thiết bị) để sửa lỗi</li>
       <li><b>Remote Config</b> — tải các giá trị cấu hình (vd số lượt thưởng) từ máy chủ Google</li>
       <li><b>Cloud Messaging</b> — một mã push token của thiết bị để gửi thông báo về tin tức, cập nhật và ưu đãi</li>
@@ -275,25 +340,48 @@
     <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>
     và <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</p>
 
+    <h4>d) Google Play Billing / Apple App Store (ExamScan Pro, tuỳ chọn)</h4>
+    <p>ExamScan Pro (chấm không giới hạn, không quảng cáo) là gói thuê bao tuỳ chọn,
+    bán qua Google Play Billing trên Android và App Store trên iOS. Cửa hàng xử lý
+    thanh toán, gia hạn, huỷ gói và cho app biết bạn có đang dùng gói nào không. App
+    chỉ giữ trạng thái đó trên máy bạn và không gửi thông tin thanh toán đi đâu. Bạn
+    có thể quản lý hoặc huỷ gói bất cứ lúc nào trong cài đặt tài khoản Google Play
+    hoặc Apple. Chính sách:
+    <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
+    và <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a>.</p>
+
     <h3>4. Quyền app yêu cầu</h3>
     <table>
       <tr><th>Quyền</th><th>Mục đích</th></tr>
       <tr><td>Camera</td><td>Chụp ảnh bài làm trong app</td></tr>
       <tr><td>Thư viện ảnh</td><td>Chọn ảnh bài làm để chấm</td></tr>
-      <tr><td>Internet (mạng)</td><td>Tải quảng cáo AdMob, ảnh banner từ GitHub, và kết nối Google Firebase</td></tr>
+      <tr><td>Internet (mạng)</td><td>Tải quảng cáo video có thưởng, ảnh banner từ GitHub, và kết nối Google Firebase</td></tr>
       <tr><td>Thông báo (tuỳ chọn)</td><td>Gửi tin tức, cập nhật, ưu đãi qua thông báo đẩy — bạn tự chọn cho phép; có thể tắt bất cứ lúc nào trong Cài đặt</td></tr>
     </table>
+    <p>Trên Android, SDK quảng cáo còn tự khai ba quyền nền của riêng nó
+    (<code>ACCESS_ADSERVICES_TOPICS</code>, <code>FOREGROUND_SERVICE</code>,
+    <code>RECEIVE_BOOT_COMPLETED</code>). Chúng đến từ SDK và thư viện hẹn giờ của
+    nó, không phải từ code của ExamScan; bản thân app không khởi chạy gì lúc bật
+    máy và không chạy dịch vụ nền nào.</p>
     <p>App <b>không</b> yêu cầu quyền vị trí, danh bạ, micro, SMS, hay bất kỳ quyền
     nhạy cảm nào khác.</p>
 
     <h3>5. Trẻ em</h3>
-    <p>ExamScan dành cho giáo viên và học sinh. App không cố ý thu thập dữ liệu cá
-    nhân từ trẻ em. Quảng cáo được giới hạn ở mức G để phù hợp với trẻ vị thành niên.</p>
+    <p>ExamScan là công cụ dành cho giáo viên và người chấm thi. Học sinh là đối
+    tượng có bài được chấm, không phải người dùng của app. App không cố ý thu thập
+    dữ liệu cá nhân từ trẻ em.</p>
+    <p>Chúng tôi cấu hình mọi đối tác quảng cáo để loại bỏ các danh mục dành cho
+    người lớn và không phù hợp lứa tuổi, ở mức chặt nhất mà đối tác đó hỗ trợ, và
+    định kỳ kiểm tra quảng cáo hiển thị trong app. Chúng tôi không thể bảo đảm mọi
+    quảng cáo do mạng bên thứ ba phục vụ đều phù hợp; hãy báo mọi quảng cáo không
+    phù hợp về <a href="mailto:Rubi.ExamScan@gmail.com">Rubi.ExamScan@gmail.com</a>,
+    chúng tôi sẽ chặn.</p>
 
     <h3>6. Lưu trữ dữ liệu</h3>
     <ul>
       <li>Ảnh và kết quả chấm: nằm trên <b>máy bạn</b> đến khi bạn xoá (gỡ app sẽ xoá hết cache).</li>
       <li>Số lượt chấm còn lại và ngôn ngữ: nằm trên máy; xoá khi gỡ app hoặc xoá data app.</li>
+      <li>Trạng thái ExamScan Pro: nằm trên máy; cài lại app thì app tự khôi phục từ tài khoản Google Play / App Store của bạn.</li>
     </ul>
 
     <h3>7. Quyền của bạn</h3>
